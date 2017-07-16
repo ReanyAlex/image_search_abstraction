@@ -26,8 +26,8 @@ if (!process.env.DISABLE_XORIGIN) {
   });
 }
 
-const url = process.env.DATABASEURLTD || "mongodb://localhost/image_search_app"
-mongoose.connect(url);
+// const url = process.env.DATABASEURLTD || "mongodb://localhost/image_search_app"
+// mongoose.connect(url);
 
 // app.use(express.static("public"));
 app.use('/public', express.static(process.cwd() + '/public'));
