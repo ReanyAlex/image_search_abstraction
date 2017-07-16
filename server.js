@@ -26,7 +26,8 @@ if (!process.env.DISABLE_XORIGIN) {
   });
 }
 
-const url = 'mongodb://areany:alre1986@ds141108.mlab.com:41108/todolist'
+// const url = 'mongodb://areany:alre1986@ds141108.mlab.com:41108/todolist'
+const url = 'mongodb://areany:alre1986@ds161262.mlab.com:61262/img_search'
 
 // process.env.DATABASEURLTD || "mongodb://localhost/image_search_app"
 mongoose.connect(url);
