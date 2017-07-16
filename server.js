@@ -10,12 +10,8 @@ const mongoose = require("mongoose"),
 const imagesearchRoutes = require("./routes/imgsearch");
 const historyRoutes = require("./routes/history");
 
-
 //Models
 const Search = require("./models/searchSchema")
-
-
-
 
 if (!process.env.DISABLE_XORIGIN) {
   app.use(function(req, res, next) {
@@ -33,11 +29,11 @@ if (!process.env.DISABLE_XORIGIN) {
 const url = process.env.DATABASEURLTD || "mongodb://localhost/image_search_app"
 mongoose.connect(url);
 
-app.use(express.static("public"));
-// app.use('/public', express.static(process.cwd() + '/public'));
+// app.use(express.static("public"));
+app.use('/public', express.static(process.cwd() + '/public'));
 
 app.use(imagesearchRoutes);
-// app.use(historyRoutes);
+app.use(historyRoutes);
 
 // Respond not found to all the wrong routes
 app.use(function(req, res, next) {
