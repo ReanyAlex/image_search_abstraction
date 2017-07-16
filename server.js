@@ -14,7 +14,8 @@ const historyRoutes = require("./routes/history");
 //Models
 const Search = require("./models/searchSchema")
 
-const url = process.env.DATABASEURLTD || "mongodb://localhost/image_search_app"
+const url = process.env.DATABASEURLTD
+// || "mongodb://localhost/image_search_app"
 mongoose.connect(url);
 
 
