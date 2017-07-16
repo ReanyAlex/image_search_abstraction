@@ -14,10 +14,7 @@ const historyRoutes = require("./routes/history");
 //Models
 const Search = require("./models/searchSchema")
 
-const url = process.env.DATABASEURLTD
-console.log(process.env.DATABASEURLTD);
-// || "mongodb://localhost/image_search_app"
-mongoose.connect(url);
+
 
 
 if (!process.env.DISABLE_XORIGIN) {
@@ -34,6 +31,10 @@ if (!process.env.DISABLE_XORIGIN) {
 }
 
 app.use('/public', express.static(process.cwd() + '/public'));
+const url = process.env.DATABASEURLTD
+console.log(process.env.DATABASEURLTD);
+// || "mongodb://localhost/image_search_app"
+mongoose.connect(url);
 
 app.use(imagesearchRoutes);
 app.use(historyRoutes);
